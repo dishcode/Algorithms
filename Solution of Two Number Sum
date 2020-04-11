@@ -8,7 +8,7 @@ class Program {
 		for(int i=1;i<array.length;i++)
 		{
 			int y=targetSum-array[i];
-			if(!ht.getKey(y))
+			if(!ht.containsKey(y))
 				ht.put(array[i],"True");
 			else
 				return new int[]{array[i],y};
