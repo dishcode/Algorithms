@@ -1,0 +1,18 @@
+import java.util.Hashtable;
+class Program {
+  public static int[] twoNumberSum(int[] array, int targetSum) {
+    // Write your code here.
+		int k=0;
+		Hashtable<Integer, String> ht = new Hashtable<Integer, String>();
+		ht.put(array[0],"True");
+		for(int i=1;i<array.length;i++)
+		{
+			int y=targetSum-array[i];
+			if(!ht.getKey(y))
+				ht.put(array[i],"True");
+			else
+				return new int[]{array[i],y};
+		}
+		return new int[0];
+	}
+}
