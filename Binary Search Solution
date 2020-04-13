@@ -1,0 +1,28 @@
+class Program {
+  public static int binarySearch(int[] array, int target) {
+    int beg,end;
+		beg=0;
+		end=array.length-1;
+		int result = binSearchImpl(array, target, beg, end);
+		System.out.println(result);
+		return result;
+	}
+	
+	public static int binSearchImpl(int[] array, int target, int beg,int end){
+		int mid=(beg+end)/2;
+		System.out.println("beg="+beg);
+		System.out.println("mid="+mid);
+		System.out.println("end="+end);
+		if(beg <= end)
+		{
+			if(array[mid] == target)
+				return mid;
+			else if(array[mid] < target) 
+			      return	binSearchImpl(array,target,mid+1,end);
+			else if(array[mid] > target) 
+					  return binSearchImpl(array,target,beg,mid-1);			
+		}
+		return -1;
+	}
+	
+}
